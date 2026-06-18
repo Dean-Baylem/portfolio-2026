@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+    /* Colors */
+    --color-primary: #ede1cb;
+    --color-secondary: #eae4cc;
+    --color-ink: #1c1a14;
+    --color-accent: #6b6455;
+    --color-highlight: #483623;
+    --color-shadow: #2c2820;
+
+    /* Fonts */
+    --font-handwriting: "Kalam", cursive;
+    --font-heading: "Cormorant", serif;
+    --font-body: "Playfair", serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

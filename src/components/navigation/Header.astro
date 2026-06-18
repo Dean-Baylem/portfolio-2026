@@ -1,0 +1,56 @@
+---
+const links: Array<{ text: string; href: string }> = [
+    {
+        text: "Projects",
+        href: "/projects",
+    },
+    {
+        text: "Experiments",
+        href: "/experiments",
+    },
+    {
+        text: "Journal",
+        href: "/journal",
+    },
+    {
+        text: "Skills",
+        href: "/#skills",
+    },
+    {
+        text: "History",
+        href: "/#history",
+    },
+    {
+        text: "Contact",
+        href: "/#contact",
+    },
+];
+
+const linkTextClass = "font-heading text-secondary font-medium";
+---
+
+<header class="flex justify-between items-center p-6 md:p-8 bg-highlight">
+    <div>
+        <a
+            href="/"
+            class={`font-handwriting text-secondary text-2xl lg:text-[1.75rem]`}
+            >Dean Baylem</a
+        >
+    </div>
+    <nav>
+        <ul class="flex gap-4 md:gap-6 lg:gap-10">
+            {
+                links.map((link) => (
+                    <li>
+                        <a
+                            href={link.href}
+                            class={`${linkTextClass} text-lg md:text-xl transition-opacity hover:opacity-60`}
+                        >
+                            {link.text}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+</header>
