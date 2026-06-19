@@ -1,0 +1,76 @@
+---
+const labelClass = "font-heading font-bold text-ink";
+const formRowClass = "flex flex-col gap-1.5";
+const inputClass = "bg-secondary py-2 px-3 border border-accent font-handwriting text-ink placeholder:text-[124_119_103_1]";
+---
+
+<form class="flex flex-col gap-4">
+    <div class={formRowClass}>
+        <label
+            for="name"
+            class={labelClass}
+            >Your Name</label
+        >
+        <input
+            class={inputClass}
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Enter your name..."
+            required
+        />
+    </div>
+    <div class={formRowClass}>
+        <label
+            for="email"
+            class={labelClass}
+            >Email Address</label
+        >
+        <input
+            class={inputClass}
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email..."
+            required
+        />
+    </div>
+    <div class={formRowClass}>
+        <label
+            for="subject"
+            class={labelClass}
+            >Subject</label
+        >
+        <input
+            class={inputClass}
+            type="text"
+            name="subject"
+            id="subject"
+            placeholder="What to discuss?"
+            required
+        />
+    </div>
+    <div class={formRowClass}>
+        <label
+            for="message"
+            class={labelClass}
+            >Message</label
+        >
+        <textarea
+            class={inputClass}
+            name="message"
+            id="message"
+            rows="8"
+            placeholder="Your message..."
+            required
+        ></textarea>
+    </div>
+    <div class={formRowClass}>
+        <input
+            type="submit"
+            value="Send Message"
+            class="block font-heading font-bold text-sm md:text-base bg-[url('./groovepaper.png')] bg-repeat bg-size-[6.25rem] rounded py-1.5 px-2 border transition-all duration-150 ease-in-out text-white border-shadow bg-highlight hover:text-highlight hover:bg-secondary"
+        />
+        <span class="font-handwriting text-ink text-sm opacity-80 mt-3">* I Typically respond within a few working days</span>
+    </div>
+</form>

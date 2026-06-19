@@ -1,0 +1,26 @@
+---
+import Section from "../UI/Section.astro";
+import ContactForm from "./ContactForm.astro";
+import ContactDetails from "./ContactDetails.astro";
+---
+
+<Section title="Let's Connect">
+    <div>
+        <h3 class="font-heading font-bold text-2xl text-ink">Get In Touch</h3>
+        <div>
+            <img
+                src="./contact-border.webp"
+                alt="Contact Banner"
+                width="100"
+                height="25"
+                loading="lazy"
+            />
+        </div>
+        <div class="grid lg:grid-cols-2 gap-6">
+            <ContactDetails />
+            <div>
+                <ContactForm />
+            </div>
+        </div>
+    </div>
+</Section>

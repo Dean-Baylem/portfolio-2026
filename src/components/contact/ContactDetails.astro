@@ -1,0 +1,86 @@
+---
+const liClass = "grid grid-cols-[6.25rem_1fr] justify-center items-center";
+const addressSpan = "font-body font-bold text-ink text-lg";
+const addressText = "font-body font-light text-ink underline hover:opacity-80 transition-opacity";
+const iconClass = "h-full w-auto max-h-12.5 row-span-2 justify-self-center";
+---
+
+<div class="pt-6">
+    <p class="font-body text-ink leading-normal">I'm always open to discuss new projects, creative ideas, or interesting opportunities.</p>
+    <p class="font-body text-ink leading-normal">Whether you have a question, or just want to say hello, I'll do my best to get back to you.</p>
+    <address class="not-italic pt-6">
+        <ul class="flex flex-col gap-5">
+            <li class={liClass}>
+                <img
+                    src="./envelope.webp"
+                    alt="Envelope Icon"
+                    width="72"
+                    height="50"
+                    loading="lazy"
+                    class={iconClass}
+                />
+                <span class={addressSpan}>Email</span>
+                <a
+                    href="mailto:deanbaylem@gmail.com"
+                    class={addressText}
+                    >deanbaylem@gmail.com</a
+                >
+            </li>
+            <li class={liClass}>
+                <img
+                    src="./location.webp"
+                    alt="Location Pin"
+                    width="42"
+                    height="50"
+                    loading="lazy"
+                    class={iconClass}
+                />
+                <span class={addressSpan}>Location</span>
+                <span class={addressText}>Miyazaki, Japan</span>
+            </li>
+            <li class={liClass}>
+                <img
+                    src="./globe.webp"
+                    alt="Globe Icon"
+                    width="49"
+                    height="50"
+                    loading="lazy"
+                    class={iconClass}
+                />
+                <span class={addressSpan}>LinkedIn</span>
+                <a
+                    href="https://www.linkedin.com/in/dean-baylem-a0b33821b/"
+                    class={addressText}
+                    target="_blank"
+                    >https://www.linkedin.com/in/dean-baylem-a0b33821b/</a
+                >
+            </li>
+            <li class={liClass}>
+                <img
+                    src="./notebooks.webp"
+                    alt="Notebooks Icon"
+                    width="94"
+                    height="50"
+                    loading="lazy"
+                    class={iconClass}
+                />
+                <span class={addressSpan}>Github</span>
+                <a
+                    href="https://github.com/Dean-Baylem"
+                    target="_blank"
+                    class={addressText}
+                    >https://github.com/Dean-Baylem</a
+                >
+            </li>
+        </ul>
+    </address>
+    <div class="pt-8">
+        <img
+            src="./note-table.webp"
+            alt="Notes on Table"
+            width="443"
+            height="275"
+            loading="lazy"
+        />
+    </div>
+</div>

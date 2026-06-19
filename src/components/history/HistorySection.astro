@@ -1,0 +1,74 @@
+---
+import Section from "../UI/Section.astro";
+
+const liClass = "py-6 border-b first:border-t border-accent flex flex-col gap-4";
+const dateClass = "font-handwriting text-ink text-sm";
+const headingClass = "font-heading font-bold text-ink text-xl md:text-2xl";
+const paragraphClass = "font-body text-ink leading-normal";
+---
+
+<Section title="Work, Education, and History">
+    <p
+        slot="lead"
+        class="font-handwriting text-ink mt-4"
+    >
+        A brief timeline of my journey from university graduation to working full time as a front-end engineer.
+    </p>
+    <ul class="flex flex-col">
+        <li class={liClass}>
+            <p class={dateClass}><time datetime="2023-07">July 2023</time> - Present</p>
+            <h3 class={headingClass}>Front-end Engineer</h3>
+            <p class={paragraphClass}>
+                Building responsive, accessible, maintainable websites for a variety of clients, working across frontend development, CMS
+                integrations, translating client requests into solutions, and ensuring best SEO practices and enjoyable user experiences.
+            </p>
+            <ul class="ml-4 list-disc">
+                <li class={`${paragraphClass} text-sm`}>Built and maintained custom WordPress themes, plugins, and headless architecture.</li>
+                <li class={`${paragraphClass} text-sm`}>
+                    Developed internal tooling including a repeater custom field plugin, CSV-driven content management tools, and WordPress editor
+                    utility functions.
+                </li>
+                <li class={`${paragraphClass} text-sm`}>Built responsive Next.js applications integrated with headless WordPress and automated cache revalidation workflows.</li>
+                <li class={`${paragraphClass} text-sm`}>
+                    Created a reusable component library that simplified onboarding, reduced repetitive boilerplate generation, and helped maintain
+                    coding standards and consistency.
+                </li>
+            </ul>
+        </li>
+        <li class={liClass}>
+            <p class={dateClass}><time datetime="2022-01">January 2022</time> - Present</p>
+            <h3 class={headingClass}>Self Directed Study</h3>
+            <p class={paragraphClass}>
+                What started out as a hobby, born from my 2022 new years resolution, quickly grew into a long-term pursuit. Initially studying Python
+                based programming, then dipping into web development during a Flask section of an online course, I found myself being drawn into the
+                user-facing side of development. My focus shifted and my environment changed to JavaScript and frontend development. Through personal
+                projects and continued study involving the MERN stack, I managed to successfully transition from English teacher to my first
+                professional web development role.
+            </p>
+            <p class={paragraphClass}>
+                Learning has remained a hobby of mine alongside my day-to-day work. This has led me to explore PHP development, core WordPress and
+                plugin development, TypeScript, GSAP-driven animations, and most recently Three.js. The goal has always remained the same: to deepen
+                my understanding of the web and become a more capable developer.
+            </p>
+        </li>
+        <li class={liClass}>
+            <p class={dateClass}>Pre-developer Life</p>
+            <h3 class={headingClass}>The Road to Development</h3>
+            <p class={paragraphClass}>
+                After graduating from an MChem Chemistry course at Manchester Metropolitan University, I spent a few years working in sales to focus
+                on saving enough money to go on one grand adventure before settling into a career. Little did I know that landing in Miyazaki, Japan
+                would become the start of an entirely new direction for my future.
+            </p>
+            <p class={paragraphClass}>
+                The next seven years were spent working as an English teacher, first within an after-school children's eikaiwa and later at a private
+                English kindergarten. During this time, I developed many of the communication, organisation, and problem-solving skills that continue
+                to influence my work today.
+            </p>
+            <p class={paragraphClass}>
+                For the last five years, I've also been running weekly Dungeons & Dragons campaigns, my primary creative outlet away from the code
+                editor. This hobby eventually inspired the creation of Dungeon Delvers Inc., a project born from a desire to better organise and
+                manage the worlds, characters, and stories created around the table.
+            </p>
+        </li>
+    </ul>
+</Section>
