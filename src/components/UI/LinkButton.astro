@@ -1,0 +1,23 @@
+---
+interface Props {
+    text: string;
+    href: string;
+    target: string;
+    type: string;
+}
+
+const { text, href, target, type = "_blank" } = Astro.props;
+
+const primaryClass = "text-white border-shadow bg-highlight hover:text-highlight hover:bg-secondary";
+
+const secondaryClass = "text-ink border-ink hover:bg-white";
+
+const selectedClass = type === "primary" ? primaryClass : secondaryClass;
+---
+
+<a
+    href={href}
+    class={`block font-heading font-bold text-sm md:text-base bg-[url('./groovepaper.png')] bg-repeat bg-size-[6.25rem] rounded py-1.5 px-2 border transition-all duration-150 ease-in-out ${selectedClass}`}
+    target={target}
+    >{text}</a
+>

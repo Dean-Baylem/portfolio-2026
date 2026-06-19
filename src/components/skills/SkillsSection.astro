@@ -1,0 +1,40 @@
+---
+import Section from "../UI/Section.astro";
+import SkillItem from "../UI/SkillItem.astro";
+
+const skillList = [
+    {
+        title: "Core",
+        description: "Technologies used daily in work and personal projects.",
+        skills: ["HTML", "CSS", "JavaScript", "TypeScript", "WordPress", "PHP", "Git", "Next.js", "React", "GSAP"],
+    },
+    {
+        title: "Experienced",
+        description: "Extensively used in past work or study, but not a part of my current regular workflow.",
+        skills: ["Tailwind", "Laravel", "MySQL", "SQLite", "Node.js", "Python", "Flask", "Express"],
+    },
+    {
+        title: "Experimenting",
+        description: "Tools and technologies I'm currently exploring in personal projects.",
+        skills: ["Three.js", "GLSL", "Blender"],
+    },
+];
+---
+
+<Section title="Skills, Tools, and Technologies">
+    <ul class="grid grid-cols-1 md:grid-cols-3">
+        {
+            skillList.map((skill) => (
+                <li class="flex flex-col gap-4 px-4 md:not-last:border-r md:not-last:border-r-accent">
+                    <h3 class="font-heading font-bold text-ink text-2xl text-center underline">{skill.title}</h3>
+                    <p class="font-body text-ink leading-normal">{skill.description}</p>
+                    <ul class="flex flex-wrap gap-2">
+                        {skill.skills.map((skill) => (
+                            <SkillItem skill={skill} />
+                        ))}
+                    </ul>
+                </li>
+            ))
+        }
+    </ul>
+</Section>

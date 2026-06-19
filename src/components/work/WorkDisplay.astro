@@ -1,0 +1,69 @@
+---
+import LinkButton from "../UI/LinkButton.astro";
+import SkillItem from "../UI/SkillItem.astro";
+
+interface Props {
+    heading: string;
+    title: string;
+    description: string;
+    image: {
+        src: string;
+        alt: string;
+        height: string;
+        width: string;
+    };
+    skills: string[];
+    links: Array<{
+        text: string;
+        href: string;
+        target: string;
+        type: string;
+    }>;
+}
+
+const { heading, title, description, image, skills, links }: Props = Astro.props;
+---
+
+<article
+    class="px-4 border-r-px border-r-accent col-span-6 relative not-last:after:content-[''] not-last:after:absolute not-last:after:w-px not-last:after:h-1/2 not-last:after:bg-accent not-last:after:top-1/2 not-last:after:right-0 not-last:after:-translate-y-1/2"
+>
+    <h3 class="font-handwriting text-ink text-lg md:text-2xl">{heading}</h3>
+    <div class="grid grid-cols-[auto_1fr] gap-4 py-6 items-center">
+        <div>
+            <img
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                loading="lazy"
+            />
+        </div>
+        <div class="flex flex-col gap-4 md:gap-6">
+            <h4 class="font-heading font-bold text-2xl md:text-3xl text-ink">{title}</h4>
+            <p class="font-body text-ink leading-normal md:text-lg">{description}</p>
+            <ul class="flex flex-wrap gap-x-1 gap-y-2 mt-auto">
+                {
+                    skills.map((skill) => (
+                        <SkillItem skill={skill} />
+                    ))
+                }
+            </ul>
+        </div>
+    </div>
+    <nav class="py-2">
+        <ul class="flex flex-wrap gap-2 items-center justify-center">
+            {
+                links.map((link) => (
+                    <li>
+                        <LinkButton
+                            text={link.text}
+                            href={link.href}
+                            target={link.target}
+                            type={link.type}
+                        />
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+</article>
