@@ -22,10 +22,10 @@ const skillList = [
 ---
 
 <Section title="Skills, Tools, and Technologies">
-    <ul class="grid grid-cols-1 md:grid-cols-3">
+    <ul class="grid gap-8 md:gap-0 grid-cols-1 md:grid-cols-3">
         {
             skillList.map((skill) => (
-                <li class="flex flex-col gap-4 px-4 md:not-last:border-r md:not-last:border-r-accent">
+                <li class="flex flex-col gap-4 md:px-4 md:not-last:border-r md:not-last:border-r-accent">
                     <h3 class="font-heading font-bold text-ink text-2xl text-center underline">{skill.title}</h3>
                     <p class="font-body text-ink leading-normal">{skill.description}</p>
                     <ul class="flex flex-wrap gap-2">

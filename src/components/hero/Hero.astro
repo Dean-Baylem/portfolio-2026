@@ -1,10 +1,8 @@
-<section class="py-12">
-    <div class="grid grid-cols-2 items-center">
+<section class="pt-12 pb-6 md:py-12">
+    <div class="flex flex-col md:grid md:grid-cols-2 items-center">
         <hgroup>
-            <h1 class="font-handwriting text-ink text-4xl lg:text-6xl leading-normal">Hello,<br />I'm Dean.</h1>
-            <p class="font-handwriting text-ink text-xl md:text-2xl leading-normal mt-2 md:mt-4 xl:mt-6">
-                Front-end focused web developer with 3 years exeprience. Here you'll find my thoughs, experiments, and things I enjoy building.
-            </p>
+            <slot name="heading" />
+            <slot name="lead" />
         </hgroup>
         <div class="col-start-2 mix-blend-multiply">
             <img
