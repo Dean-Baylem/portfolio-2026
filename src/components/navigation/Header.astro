@@ -29,15 +29,15 @@ const links: Array<{ text: string; href: string }> = [
 const linkTextClass = "font-heading text-secondary font-medium";
 ---
 
-<header class="p-6 md:p-8 bg-highlight">
+<header class="p-4 sm:p-6 md:p-8 bg-highlight">
     <div class="flex justify-between items-center max-w-360 mx-auto">
         <a
             href="/"
-            class={`font-handwriting text-secondary text-2xl lg:text-[1.75rem]`}
+            class={`font-handwriting text-secondary text-xl sm:text-2xl lg:text-[1.75rem]`}
             >Dean Baylem</a
         >
         <nav class="hidden md:block">
-            <ul class="flex gap-4 md:gap-6 lg:gap-10">
+            <ul class="flex gap-4 md:gap-6 lg:gap-8 xl:gap-10">
                 {
                     links.map((link) => (
                         <li>
@@ -61,7 +61,7 @@ const linkTextClass = "font-heading text-secondary font-medium";
         </button>
     </div>
 </header>
-<div id="sidedrawer" class="md:hidden fixed top-20 right-0 bg-highlight px-6 pb-6 z-10 js-navToggle">
+<div id="sidedrawer" class="md:hidden fixed top-15 sm:top-20 right-0 bg-highlight px-6 pb-6 z-10 js-navToggle">
     <nav>
         <ul class="flex flex-col">
             {

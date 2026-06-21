@@ -7,7 +7,7 @@ const workDisplays = [
     {
         heading: "Recent Project",
         title: "Dungeon Delvers Inc.",
-        description: "A worldbuilding and campaign management tool for TTRPG’s.\n\nCreated with Next.js, using Payload CMS for content management.",
+        description: "A worldbuilding and campaign management tool for TTRPG’s. Created with Next.js, using Payload CMS for content management.",
         image: {
             src: "./castle.webp",
             alt: "Castle Icon",
@@ -17,19 +17,25 @@ const workDisplays = [
         skills: ["Next.js", "Payload", "TypeScript", "Leaflet.js", "Tailwind"],
         links: [
             {
-                text: "View Project",
-                href: "https://dungeon-delvers-inc-payload.vercel.app/",
-                target: "_blank",
+                text: "All Projects",
+                href: "/projects",
+                target: "_self",
                 type: "primary",
             },
             {
-                text: "Project Summary",
+                text: "Live Site",
+                href: "https://dungeon-delvers-inc-payload.vercel.app/",
+                target: "_self",
+                type: "secondary",
+            },
+            {
+                text: "Summary",
                 href: "/projects/dungeon-delvers-inc",
                 target: "_self",
                 type: "secondary",
             },
             {
-                text: "Project Repo",
+                text: "Github Repo",
                 href: "https://github.com/Dean-Baylem/dungeon-delvers-inc-payload",
                 target: "_blank",
                 type: "secondary",
@@ -40,7 +46,7 @@ const workDisplays = [
         heading: "Current Experiment",
         title: "Campfire Scene",
         description:
-            "Stylized 3D environment inspired by early web games.\n\nBuilt using a combination of Blender, React Three Fiber, and custom GLSL shaders.",
+            "Stylized 3D environment inspired by early web games. Built using a combination of Blender, React Three Fiber, and custom GLSL shaders.",
         image: {
             src: "./campfire.webp",
             alt: "Campfire Icon",
@@ -50,19 +56,25 @@ const workDisplays = [
         skills: ["React", "Three.js", "React Three Fiber", "GLSL", "Blender"],
         links: [
             {
-                text: "View Experiment",
-                href: "https://campfire-scene.vercel.app/",
-                target: "_blank",
+                text: "All Expriments",
+                href: "/experiments",
+                target: "_self",
                 type: "primary",
             },
             {
-                text: "Experiment Summary",
+                text: "Live Site",
+                href: "https://campfire-scene.vercel.app/",
+                target: "_self",
+                type: "secondary",
+            },
+            {
+                text: "Summary",
                 href: "/experiments/campfire-scene",
                 target: "_self",
                 type: "secondary",
             },
             {
-                text: "Experiment Repo",
+                text: "Github Repo",
                 href: "https://github.com/Dean-Baylem/campfire-scene",
                 target: "_blank",
                 type: "secondary",
