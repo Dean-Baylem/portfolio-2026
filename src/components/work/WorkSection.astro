@@ -17,16 +17,10 @@ const workDisplays = [
         skills: ["Next.js", "Payload", "TypeScript", "Leaflet.js", "Tailwind"],
         links: [
             {
-                text: "All Projects",
-                href: "/projects",
-                target: "_self",
-                type: "primary",
-            },
-            {
                 text: "Live Site",
                 href: "https://dungeon-delvers-inc-payload.vercel.app/",
                 target: "_self",
-                type: "secondary",
+                type: "primary",
             },
             {
                 text: "Summary",
@@ -43,7 +37,7 @@ const workDisplays = [
         ],
     },
     {
-        heading: "Current Experiment",
+        heading: "Latest Experiment",
         title: "Campfire Scene",
         description:
             "Stylized 3D environment inspired by early web games. Built using a combination of Blender, React Three Fiber, and custom GLSL shaders.",
@@ -54,18 +48,12 @@ const workDisplays = [
             width: "159",
         },
         skills: ["React", "Three.js", "React Three Fiber", "GLSL", "Blender"],
-        links: [
-            {
-                text: "All Expriments",
-                href: "/experiments",
-                target: "_self",
-                type: "primary",
-            },
+        links: [    
             {
                 text: "Live Site",
-                href: "https://campfire-scene.vercel.app/",
+                href: "https://druid-camp.netlify.app/",
                 target: "_self",
-                type: "secondary",
+                type: "primary",
             },
             {
                 text: "Summary",
@@ -103,6 +91,17 @@ const journalEntries = [
 ---
 
 <Section title="Work, Experiments, and Log Entries">
+    <div slot="lead">
+        <p class="font-handwriting text-ink sm:text-lg">Below you'll find my most recent main project and latest experimental work.</p>
+        <span class="block w-fit mt-4"
+            ><LinkButton
+                text="All Projects"
+                href="/projects"
+                type="primary"
+                target="_self"
+            /></span
+        >
+    </div>
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-0">
         {
             workDisplays.map((display) => (

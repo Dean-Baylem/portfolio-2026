@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/hero/Hero.astro";
+import HeroTitle from "../../components/hero/HeroTitle.astro";
+import HeroLead from "../../components/hero/HeroLead.astro";
+import Divider from "../../components/borders/Divider.astro";
+
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+    const projects = await getCollection("project");
+    return projects.map((project: any) => ({
+        params: { slug: project.id },
+        props: { project },
+    }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+
+console.log(`Props: ${Astro.props}`);
+---
+
+<Layout>
+    <Hero>
+        <HeroTitle slot="heading" title={project.data.title}/>
+        <HeroLead slot="lead" lead={project.data.lead} />
+    </Hero>
+    <Divider />
+    <div class="prose">
+        <Content />
+    </div>
+</Layout>
