@@ -13,4 +13,14 @@ const project = defineCollection({
     }),
 });
 
-export const collections = { project };
+const journal = defineCollection({
+    loader: glob({ base: "./src/content/journal", pattern: "**/*.{md,mdx}" }),
+    schema: z.object({
+        title: z.string(),
+        date: z.coerce.date(),
+        tags: z.array(z.string()),
+        heroImage: z.string(),
+    })
+})
+
+export const collections = { project, journal };

@@ -36,27 +36,39 @@ import { journalEntries } from "../../utils/journalContent";
     </div>
     <div>
         <h3 class="font-handwriting text-ink text-lg md:text-2xl">Journal Entries</h3>
-        <nav>
-            <ul>
-                {
-                    journalEntries.map((entry) => (
-                        <JournalItem
-                            link={entry.link}
-                            title={entry.title}
-                            date={entry.date}
-                            datetime={entry.datetime}
+        {
+            journalEntries.length > 0 ? (
+                <>
+                    <nav>
+                        <ul>
+                            {journalEntries.map((entry) => (
+                                <JournalItem
+                                    link={entry.link}
+                                    title={entry.title}
+                                    date={entry.date}
+                                    datetime={entry.datetime}
+                                />
+                            ))}
+                        </ul>
+                    </nav>
+                    <div class="flex mt-6">
+                        <LinkButton
+                            text="All Journal Entries"
+                            href="/journal"
+                            target="_self"
+                            type="primary"
                         />
-                    ))
-                }
-            </ul>
-        </nav>
-        <div class="flex mt-6">
-            <LinkButton
-                text="All Journal Entries"
-                href="/journal"
-                target="_self"
-                type="primary"
-            />
-        </div>
+                    </div>
+                </>
+            ) : (
+                <div class="mt-6">
+                    <p class="font-body font-bold text-ink md:text-lg">
+                        No journal entries found.
+                        <br />
+                        Please check back later.
+                    </p>
+                </div>
+            )
+        }
     </div>
 </Section>

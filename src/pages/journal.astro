@@ -6,6 +6,7 @@ import HeroImage from "../components/hero/HeroImage.astro";
 import Layout from "../layouts/Layout.astro";
 import Divider from "../components/borders/Divider.astro";
 import JournalItem from "../components/work/JournalItem.astro";
+import LinkButton from "../components/UI/LinkButton.astro";
 import { journalEntries } from "../utils/journalContent";
 ---
 
@@ -29,17 +30,35 @@ import { journalEntries } from "../utils/journalContent";
     </Hero>
     <Divider />
     <section>
-        <ul>
-            {
-                journalEntries.map((entry) => (
-                    <JournalItem
-                        link={entry.link}
-                        title={entry.title}
-                        date={entry.date}
-                        datetime={entry.datetime}
-                    />
-                ))
-            }
-        </ul>
+        {
+            journalEntries.length > 0 ? (
+                <ul>
+                    {journalEntries.map((entry) => (
+                        <JournalItem
+                            link={entry.link}
+                            title={entry.title}
+                            date={entry.date}
+                            datetime={entry.datetime}
+                        />
+                    ))}
+                </ul>
+            ) : (
+                <div class="mt-6 flex flex-col gap-4">
+                    <p class="font-body font-bold text-ink md:text-lg">
+                        No journal entries found.
+                        <br />
+                        Please check back later.
+                    </p>
+                    <span class="block w-fit">
+                        <LinkButton
+                            text="Return Home"
+                            href="/"
+                            target="_self"
+                            type="primary"
+                        />
+                    </span>
+                </div>
+            )
+        }
     </section>
 </Layout>

@@ -6,22 +6,21 @@ import HeroLead from "../../components/hero/HeroLead.astro";
 import HeroImage from "../../components/hero/HeroImage.astro";
 import Divider from "../../components/borders/Divider.astro";
 import Contents from "../../components/UI/Contents.astro";
-import ContentSkillList from "../../components/UI/ContentSkillList.astro";
 
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
-    const projects = await getCollection("project");
-    return projects.map((project: any) => ({
-        params: { slug: project.id },
-        props: { project },
+    const journals = await getCollection("journal");
+    return journals.map((journal: any) => ({
+        params: { slug: journal.id },
+        props: { journal },
     }));
 }
 
-const { project } = Astro.props;
-const { Content } = await render(project);
+const { journal } = Astro.props;
+const { Content } = await render(journal);
 
-const date = new Date(project.data.date);
+const date = new Date(journal.data.date);
 const formattedDate = date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
@@ -33,10 +32,10 @@ const formattedDate = date.toLocaleDateString("en-US", {
     <Hero>
         <HeroTitle
             slot="heading"
-            title={project.data.title}
+            title={journal.data.title}
         />
         <span slot="lead">
-            <HeroLead lead={project.data.lead} />
+            <HeroLead lead={journal.data.lead} />
             <p class="font-handwriting text-ink text-sm md:text-base leading-normal mt-2">Date: {formattedDate}</p>
         </span>
         <HeroImage
@@ -49,7 +48,6 @@ const formattedDate = date.toLocaleDateString("en-US", {
     </Hero>
     <Divider />
     <Contents>
-        <ContentSkillList slot="skills" tags={project.data.tags} />
         <Content />
     </Contents>
 </Layout>

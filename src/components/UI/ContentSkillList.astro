@@ -1,0 +1,11 @@
+---
+import SkillItem from "./SkillItem.astro";
+const { tags } = Astro.props;
+---
+
+<ul
+    class="flex gap-2 mt-6"
+    slot="skills"
+>
+    {tags.map((tag: any) => <SkillItem skill={tag} />)}
+</ul>
