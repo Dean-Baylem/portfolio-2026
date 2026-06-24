@@ -2,6 +2,7 @@
 import Hero from "../components/hero/Hero.astro";
 import HeroTitle from "../components/hero/HeroTitle.astro";
 import HeroLead from "../components/hero/HeroLead.astro";
+import HeroImage from "../components/hero/HeroImage.astro";
 import Layout from "../layouts/Layout.astro";
 import Divider from "../components/borders/Divider.astro";
 import WorkSection from "../components/work/WorkSection.astro";
@@ -22,6 +23,13 @@ import Contact from "../components/contact/Contact.astro";
         <HeroLead
             slot="lead"
             lead={"Front-end focused web developer with 3 years exeprience. Here you'll find my thoughs, experiments, and things I enjoy building."}
+        />
+        <HeroImage
+            slot="image"
+            src="/hero.webp"
+            alt="Hand drawn style hero campfire image"
+            width="600"
+            height="400"
         />
     </Hero>
     <Divider />

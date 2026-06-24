@@ -1,93 +1,10 @@
 ---
 import Section from "../UI/Section.astro";
 import WorkDisplay from "./WorkDisplay.astro";
+import JournalItem from "./JournalItem.astro";
 import LinkButton from "../UI/LinkButton.astro";
-
-const workDisplays = [
-    {
-        heading: "Recent Project",
-        title: "Dungeon Delvers Inc.",
-        description: "A worldbuilding and campaign management tool for TTRPG’s. Created with Next.js, using Payload CMS for content management.",
-        image: {
-            src: "./castle.webp",
-            alt: "Castle Icon",
-            height: "159",
-            width: "159",
-        },
-        skills: ["Next.js", "Payload", "TypeScript", "Leaflet.js", "Tailwind"],
-        links: [
-            {
-                text: "Live Site",
-                href: "https://dungeon-delvers-inc-payload.vercel.app/",
-                target: "_self",
-                type: "primary",
-            },
-            {
-                text: "Summary",
-                href: "/projects/dungeon-delvers-inc",
-                target: "_self",
-                type: "secondary",
-            },
-            {
-                text: "Github Repo",
-                href: "https://github.com/Dean-Baylem/dungeon-delvers-inc-payload",
-                target: "_blank",
-                type: "secondary",
-            },
-        ],
-    },
-    {
-        heading: "Latest Experiment",
-        title: "Campfire Scene",
-        description:
-            "Stylized 3D environment inspired by early web games. Built using a combination of Blender, React Three Fiber, and custom GLSL shaders.",
-        image: {
-            src: "./campfire.webp",
-            alt: "Campfire Icon",
-            height: "140",
-            width: "159",
-        },
-        skills: ["React", "Three.js", "React Three Fiber", "GLSL", "Blender"],
-        links: [    
-            {
-                text: "Live Site",
-                href: "https://druid-camp.netlify.app/",
-                target: "_self",
-                type: "primary",
-            },
-            {
-                text: "Summary",
-                href: "/experiments/campfire-scene",
-                target: "_self",
-                type: "secondary",
-            },
-            {
-                text: "Github Repo",
-                href: "https://github.com/Dean-Baylem/campfire-scene",
-                target: "_blank",
-                type: "secondary",
-            },
-        ],
-    },
-];
-
-const journalEntries = [
-    {
-        title: "Implementing helper functions for the WordPress Block Editor",
-        date: "June 17, 2026",
-        link: "/journal/implementing-helper-functions-for-the-wordpress-block-editor",
-    },
-    {
-        title: "Implementing helper functions for the WordPress Block Editor",
-        date: "June 17, 2026",
-        link: "/journal/implementing-helper-functions-for-the-wordpress-block-editor",
-    },
-    {
-        title: "Implementing helper functions for the WordPress Block Editor",
-        date: "June 17, 2026",
-        link: "/journal/implementing-helper-functions-for-the-wordpress-block-editor",
-    },
-];
+import { workDisplays } from "../../utils/projectContent";
+import { journalEntries } from "../../utils/journalContent";
 ---
 
 <Section title="Work, Experiments, and Log Entries">
@@ -112,6 +29,7 @@ const journalEntries = [
                     image={display.image}
                     skills={display.skills}
                     links={display.links}
+                    customClass={`not-last:after:content-[''] not-last:after:absolute not-last:after:w-px not-last:after:h-1/2 not-last:after:bg-accent not-last:after:top-1/2 not-last:after:right-0 not-last:after:-translate-y-1/2 not-last:after:hidden lg:not-last:after:block`}
                 />
             ))
         }
@@ -122,17 +40,12 @@ const journalEntries = [
             <ul>
                 {
                     journalEntries.map((entry) => (
-                        <li class="py-4 flex flex-col gap-1 border-b border-accent">
-                            <h4>
-                                <a
-                                    href={entry.link}
-                                    class="font-semibold font-heading text-ink text-lg md:text-xl hover:opacity-80 transition-opacity"
-                                >
-                                    {entry.title}
-                                </a>
-                            </h4>
-                            <p class="font-body font-light text-ink text-sm md:text-base">{entry.date}</p>
-                        </li>
+                        <JournalItem
+                            link={entry.link}
+                            title={entry.title}
+                            date={entry.date}
+                            datetime={entry.datetime}
+                        />
                     ))
                 }
             </ul>

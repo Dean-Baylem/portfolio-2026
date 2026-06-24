@@ -19,13 +19,14 @@ interface Props {
         target: string;
         type: string;
     }>;
+    customClass?: string;
 }
 
-const { heading, title, description, image, skills, links }: Props = Astro.props;
+const { heading, title, description, image, skills, links, customClass }: Props = Astro.props;
 ---
 
 <article
-    class="sm:px-4 col-span-6 relative not-last:after:content-[''] not-last:after:absolute not-last:after:w-px not-last:after:h-1/2 not-last:after:bg-accent not-last:after:top-1/2 not-last:after:right-0 not-last:after:-translate-y-1/2 not-last:after:hidden lg:not-last:after:block"
+    class={`sm:px-4 col-span-6 relative ${customClass}`}
 >
     <h3 class="font-handwriting text-ink text-lg md:text-2xl">{heading}</h3>
     <div class="grid grid-cols-[5rem_1fr] md:grid-cols-[7.5rem_1fr] lg:grid-cols-[10rem_1fr] gap-4 py-6 items-center">

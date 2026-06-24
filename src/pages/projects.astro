@@ -1,0 +1,57 @@
+---
+import Hero from "../components/hero/Hero.astro";
+import HeroTitle from "../components/hero/HeroTitle.astro";
+import HeroLead from "../components/hero/HeroLead.astro";
+import HeroImage from "../components/hero/HeroImage.astro";
+import Layout from "../layouts/Layout.astro";
+import Divider from "../components/borders/Divider.astro";
+import WorkDisplay from "../components/work/WorkDisplay.astro";
+import { workDisplays } from "../utils/projectContent";
+---
+
+<Layout>
+    <Hero>
+        <HeroTitle
+            slot="heading"
+            title={"Projects & Experiments"}
+        />
+        <HeroLead
+            slot="lead"
+            lead={"A collection of full-scale projects and mini-experiments I have been working on."}
+        />
+        <HeroImage
+            slot="image"
+            src="/hero.webp"
+            alt="Hand drawn style hero campfire image"
+            width="600"
+            height="400"
+        />
+    </Hero>
+    <Divider />
+    <section>
+        <ul
+            class="flex flex-col"
+            id="workList"
+        >
+            {
+                workDisplays.map((display) => (
+                    <WorkDisplay
+                        heading={display.heading}
+                        title={display.title}
+                        description={display.description}
+                        image={display.image}
+                        skills={display.skills}
+                        links={display.links}
+                        customClass={"py-10 not-last:border-b not-last:border-b-accent"}
+                    />
+                ))
+            }
+        </ul>
+    </section>
+</Layout>
+
+<style>
+    #worklist article {
+        padding-top: 2.5rem;
+    }
+</style>

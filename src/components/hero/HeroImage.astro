@@ -1,0 +1,21 @@
+---
+interface Props {
+    src: string;
+    width: string;
+    height: string;
+    alt: string;
+}
+
+const { src, width, height, alt } = Astro.props;
+---
+
+<div class="col-start-2 mix-blend-multiply">
+    <img
+        src={src}
+        alt={alt}
+        width={width}
+        height={height}
+        loading="eager"
+        class="max-w-150"
+    />
+</div>

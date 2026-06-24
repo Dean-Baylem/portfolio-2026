@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/hero/Hero.astro";
 import HeroTitle from "../../components/hero/HeroTitle.astro";
 import HeroLead from "../../components/hero/HeroLead.astro";
+import HeroImage from "../../components/hero/HeroImage.astro";
 import Divider from "../../components/borders/Divider.astro";
 
 import { getCollection, render } from "astro:content";
@@ -23,11 +24,93 @@ console.log(`Props: ${Astro.props}`);
 
 <Layout>
     <Hero>
-        <HeroTitle slot="heading" title={project.data.title}/>
-        <HeroLead slot="lead" lead={project.data.lead} />
+        <HeroTitle
+            slot="heading"
+            title={project.data.title}
+        />
+        <HeroLead
+            slot="lead"
+            lead={project.data.lead}
+        />
+        <HeroImage
+            slot="image"
+            src="/hero.webp"
+            alt="Hand drawn style hero campfire image"
+            width="600"
+            height="400"
+        />
     </Hero>
     <Divider />
-    <div class="prose">
+    <div
+        id="contents"
+        class=""
+    >
         <Content />
     </div>
 </Layout>
+
+<style>
+    #contents {
+        padding-block: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #contents :global(h2) {
+        color: var(--color-ink);
+        font-family: var(--font-handwriting);
+        font-size: 1.875rem;
+        padding-block: 0.5rem;
+    }
+
+    #contents :global(h3) {
+        color: var(--color-ink);
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    #contents :global(p) {
+        color: var(--color-ink);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.75;
+    }
+
+    #contents :global(ul) {
+        color: var(--color-ink);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.75;
+        padding-left: 0.5rem;
+        list-style-type: "- ";
+    }
+
+    #contents :global(ol) {
+        color: var(--color-ink);
+        font-family: var(--font-body);
+        font-size: 1rem;
+        line-height: 1.75;
+        padding-left: 1rem;
+        list-style-type: decimal;
+    }
+
+    #contents :global(a) {
+        text-decoration: underline;
+    }
+
+    #contents :global(img) {
+        margin: 0 auto;
+    }
+
+    @media screen and (max-width: 767px) {
+        #contents :global(h2) {
+            font-size: 1.5rem;
+        }
+
+        #contents :global(h3) {
+            font-size: 1.25rem;
+        }
+    }
+</style>
