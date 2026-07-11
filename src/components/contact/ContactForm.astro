@@ -68,6 +68,17 @@ const inputClass = "bg-secondary py-2 px-3 border border-accent font-handwriting
             required
         ></textarea>
     </div>
+    <div
+        class="absolute left-[-5000px] h-1 w-1 overflow-hidden"
+        aria-hidden="true"
+    >
+        <input
+            type="text"
+            name="location"
+            tabindex="-1"
+            autocomplete="off"
+        />
+    </div>
     <div class={formRowClass}>
         <input
             type="submit"
@@ -85,6 +96,14 @@ const inputClass = "bg-secondary py-2 px-3 border border-accent font-handwriting
         e.preventDefault();
 
         const formData = new FormData(form);
+
+        const honeypot = formData.get("location")?.toString().trim();
+
+        if (honeypot) {
+            console.warn("Sorry, there was an error with your submission. Please try again.");
+            return;
+        }
+
         formData.append("access_key", import.meta.env.PUBLIC_WEB3FORMS_KEY);
 
         const originalText = submitBtn?.textContent;

@@ -7,6 +7,7 @@ import HeroImage from "../../components/hero/HeroImage.astro";
 import Divider from "../../components/borders/Divider.astro";
 import Contents from "../../components/UI/Contents.astro";
 import ContentSkillList from "../../components/UI/ContentSkillList.astro";
+import LinkButton from "../../components/UI/LinkButton.astro";
 
 import { getCollection, render } from "astro:content";
 
@@ -49,7 +50,17 @@ const formattedDate = date.toLocaleDateString("en-US", {
     </Hero>
     <Divider />
     <Contents>
-        <ContentSkillList slot="skills" tags={project.data.tags} />
+        <ContentSkillList
+            slot="skills"
+            tags={project.data.tags}
+        />
         <Content />
+        <LinkButton
+            slot="link"
+            text="Back to Projects"
+            href="/projects"
+            type="primary"
+            target="_self"
+        />
     </Contents>
 </Layout>
