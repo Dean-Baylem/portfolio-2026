@@ -1,7 +1,7 @@
 ---
 const liClass = "grid grid-cols-[4rem_1fr] sm:grid-cols-[6.25rem_1fr] gap-x-2 justify-center items-center";
 const addressSpan = "font-body font-bold text-ink text-lg";
-const addressText = "font-body font-light text-ink underline hover:opacity-80 transition-opacity";
+const addressText = "font-body font-light text-ink hover:opacity-80 transition-opacity";
 const iconClass = "h-full w-auto max-h-12.5 row-span-2 justify-self-center";
 ---
 
@@ -22,7 +22,7 @@ const iconClass = "h-full w-auto max-h-12.5 row-span-2 justify-self-center";
                 <span class={addressSpan}>Email</span>
                 <a
                     href="mailto:deanbaylem@gmail.com"
-                    class={addressText}
+                    class={`${addressText} underline`}
                     >deanbaylem@gmail.com</a
                 >
             </li>
@@ -50,7 +50,7 @@ const iconClass = "h-full w-auto max-h-12.5 row-span-2 justify-self-center";
                 <span class={addressSpan}>LinkedIn</span>
                 <a
                     href="https://www.linkedin.com/in/dean-baylem-a0b33821b/"
-                    class={addressText}
+                    class={`${addressText} underline`}
                     target="_blank"
                     >https://www.linkedin.com/in/dean-baylem-a0b33821b/</a
                 >
@@ -68,7 +68,7 @@ const iconClass = "h-full w-auto max-h-12.5 row-span-2 justify-self-center";
                 <a
                     href="https://github.com/Dean-Baylem"
                     target="_blank"
-                    class={addressText}
+                    class={`${addressText} underline`}
                     >https://github.com/Dean-Baylem</a
                 >
             </li>
