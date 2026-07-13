@@ -23,7 +23,7 @@ export const workDisplays = [
         title: "Dungeon Delvers Inc.",
         description: "A worldbuilding and campaign management tool for TTRPG’s. Created with Next.js, using Payload CMS for content management.",
         image: {
-            src: "./castle.webp",
+            src: "/castle.webp",
             alt: "Castle Icon",
             height: "159",
             width: "159",
@@ -56,7 +56,7 @@ export const workDisplays = [
         description:
             "Stylized 3D environment inspired by early web games. Built using a combination of Blender, React Three Fiber, and custom GLSL shaders.",
         image: {
-            src: "./campfire.webp",
+            src: "/campfire.webp",
             alt: "Campfire Icon",
             height: "140",
             width: "159",
