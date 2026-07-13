@@ -69,15 +69,15 @@ export const workDisplays = [
                 target: "_self",
                 type: "primary",
             },
-            {
-                text: "Summary",
-                href: "/experiments/campfire-scene",
-                target: "_self",
-                type: "secondary",
-            },
+            // {
+            //     text: "Summary",
+            //     href: "/experiments/campfire-scene",
+            //     target: "_self",
+            //     type: "secondary",
+            // },
             {
                 text: "Github Repo",
-                href: "https://github.com/Dean-Baylem/campfire-scene",
+                href: "https://github.com/Dean-Baylem/druid-camp",
                 target: "_blank",
                 type: "secondary",
             },

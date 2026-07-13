@@ -66,6 +66,7 @@ const linkTextClass = "font-heading text-secondary font-medium";
                         <a
                             href={link.href}
                             class={`${linkTextClass} text-xl transition-opacity hover:opacity-60`}
+                            onclick="document.getElementById('hamburger').click()"
                         >
                             {link.text}
                         </a>
@@ -89,6 +90,10 @@ const linkTextClass = "font-heading text-secondary font-medium";
 </script>
 
 <style>
+    #hamburger:hover {
+        cursor: pointer;
+    }
+    
     #hamburger span {
         position: absolute;
         left: 0;
@@ -117,7 +122,7 @@ const linkTextClass = "font-heading text-secondary font-medium";
     }
 
     #sidedrawer {
-        transform: translateX(100%);
+        transform: translateX(101%);
         transition: all 0.2s ease-in-out;
     }
 
